@@ -1,0 +1,2 @@
+# Start pipewire.service when the sound card control node appears.
+SUBSYSTEM=="sound", KERNEL=="controlC0", ACTION=="add", TAG+="systemd", ENV{SYSTEMD_READY}="1", ENV{SYSTEMD_WANTS}+="pipewire.service"

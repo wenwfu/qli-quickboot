@@ -1,0 +1,20 @@
+[Unit]
+Description=Camera Server Service
+SourcePath=/usr/bin/cam-server
+DefaultDependencies=no
+After=dev-video0.device
+Wants=dev-video0.device
+StartLimitIntervalSec=30
+StartLimitBurst=5
+
+[Service]
+User=root
+Group=root
+SupplementaryGroups=
+Restart=always
+RestartSec=1
+RuntimeDirectory=cam_server
+RuntimeDirectoryMode=0775
+CacheDirectory=camera
+ExecCondition=/usr/bin/check-camx-overlay.sh
+ExecStart=/usr/bin/cam-server

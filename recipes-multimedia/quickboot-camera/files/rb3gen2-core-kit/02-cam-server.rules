@@ -1,0 +1,2 @@
+# Start cam-server.service when the video0 node appears.
+SUBSYSTEM=="video4linux", KERNEL=="video0", ACTION=="add", TAG+="systemd", ENV{SYSTEMD_READY}="1", ENV{SYSTEMD_WANTS}+="cam-server.service"
