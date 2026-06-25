@@ -1,2 +1,0 @@
-# Disable Non-Camera Sensors (gyro/gravity/accel) in the camera pipeline.
-enableNCSService=FALSE
